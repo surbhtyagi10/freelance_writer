@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>View Stories</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Navbar -->
+
+
+<div class="navs" padding-top: 0px; width: 100%;>
+
+		<h1 class="site-title mb-0"><a href="{% url 'Portal:index' %}"><-Back</a> 
+{% if cuser.id == story.user_id%}
+<a class="site-title mb-0" style="float:right;" href="/{{file_path}}">Download</a></h1>
+<p style="text-align:center">
+<!--<a  href="{% url 'Portal:edit_story' story.id %}"><span style = "text-align:center; font-size:40px; color:blue;">Edit</span></a></p> -->
+{% endif %}
+		
+	</div>
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+
+
+
+  <!-- The Band Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px" id="band">
+    <h2 class="w3-wide">{{story.story_title}}</h2>
+    <p class="w3-opacity"><i>{{cuser.first_name}}  {{cuser.last_name}}</i></p>
+	<div style="font-size:24px; ">
+    {{story.story|safe}}
+    </div>
+
+</body>
+<script>
+$('#back').click(function goBack() {
+	window.history.back();
+});
+</script>
+</html>
