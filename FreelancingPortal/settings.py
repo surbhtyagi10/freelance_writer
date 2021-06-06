@@ -77,14 +77,7 @@ WSGI_APPLICATION = 'FreelancingPortal.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'FreelancingPortal',
-    #     'USER': 'Aakash_97',
-    #     'PASSWORD': 'Light97isawesome',
-    #     'HOST': 'aakashdbinstance.cdgcb2d25ikg.ap-south-1.rds.amazonaws.com',
-    #     'PORT': '3306',
-    # }
+   
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'freelancing_portal',
